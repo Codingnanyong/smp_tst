@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
+  <Tracking>
+    <ImageTarget name="GoRyung_Target_36" size="230.000000 230.000000" />
+    <ImageTarget name="GoRyung_Target_35" size="230.000000 230.000000" />
+    <ImageTarget name="GoRyung_Target_34" size="230.000000 230.000000" />
+    <ImageTarget name="GoRyung_Target_33" size="230.000000 230.000000" />
+    <ImageTarget name="GoRyung_Target_32" size="230.000000 230.000000" />
+    <ImageTarget name="GoRyung_Target_31" size="230.000000 230.000000" />
+    <ImageTarget name="HamAn_Target_26" size="230.000000 230.000000" />
+    <ImageTarget name="HamAn_Target_25" size="230.000000 230.000000" />
+    <ImageTarget name="HamAn_Target_24" size="230.000000 230.000000" />
+    <ImageTarget name="HamAn_Target_23" size="230.000000 230.000000" />
+    <ImageTarget name="HamAn_Target_22" size="230.000000 230.000000" />
+    <ImageTarget name="HamAn_Target_21" size="230.000000 229.098038" />
+    <ImageTarget name="GimHae_Target_16" size="230.000000 230.000000" />
+    <ImageTarget name="GimHae_Target_15" size="230.000000 230.000000" />
+    <ImageTarget name="GimHae_Target_14" size="230.000000 230.000000" />
+    <ImageTarget name="GimHae_Target_13" size="230.000000 230.000000" />
+    <ImageTarget name="GimHae_Target_12" size="230.000000 230.000000" />
+    <ImageTarget name="GimHae_Target_11" size="230.000000 230.000000" />
+  </Tracking>
+</QCARConfig>
