@@ -8,3 +8,12 @@ Sample &amp; Test Codes.
 > ⚙ Engine : Unity <br/>
 > 🔧 Framework : <br/>
 > 🔨 Libarary :  <br/>
+
+## Author
+
+🙋‍♂️ ryu-coding (TaeHyeon.Ryu)
+
+- Personal Mail : ryu.coding1@gmail.com
+
+## 📝 License
+* This project is Free licensed.
