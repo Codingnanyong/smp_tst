@@ -1,14 +1,23 @@
-﻿string ip = "127.0.0.1";
+﻿IotDevice device = new IotDevice
+{
+    DeviceId = "12345",
+    Ip = "127.0.0.1"
+};
 
-if (IoTCheck.PingTest(ip))
+if (IoTCheck.PingTest(device.Ip))
 {
     Console.WriteLine("Ping Success");
 
-    AutoBatch.CreateBatch();
+    AutoBatch.CreateBatch(device);
 
-    AutoBatch.WriteBatch( "@echo off\r\n" +"echo This is the updated batch file content.\r\n" +"pause");
+    AutoBatch.WriteBatch(
+        device,
+        "@echo off\r\n" +
+        "echo This is the updated batch file content.\r\n" +
+        $"{device.Ip]}\r\n"
+        "pause");
 
-    AutoBatch.RunBatch();
+    AutoBatch.RunBatchAsAdmin(device);
 }
 else
 {

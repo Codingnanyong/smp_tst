@@ -4,14 +4,21 @@ using System.Security.Principal;
 
 public class AutoBatch
 {
-    private static string BatchFilePath = "example.bat";
-
-    public static void CreateBatch()
+    public static void CreateBatch(IotDevice device)
     {
+        if (device == null || string.IsNullOrEmpty(device.DeviceId))
+        {
+            Console.WriteLine("Invalid device information. Unable to create batch file.");
+            return;
+        }
+
+        string batchFileName = $"{device.DeviceId}_example.bat";
+        string batchFilePath = Path.Combine(Environment.CurrentDirectory, batchFileName);
+
         try
         {
-            File.WriteAllText(BatchFilePath, "");
-            Console.WriteLine($"Batch file '{BatchFilePath}' created successfully.");
+            File.WriteAllText(batchFilePath, "");
+            Console.WriteLine($"Batch file '{batchFilePath}' created successfully.");
         }
         catch (Exception ex)
         {
@@ -19,12 +26,21 @@ public class AutoBatch
         }
     }
 
-   public static void WriteBatch(string newContent)
+   public static void WriteBatch(IotDevice device, string newContent)
     {
+        if (device == null || string.IsNullOrEmpty(device.DeviceId))
+        {
+            Console.WriteLine("Invalid device information. Unable to write to batch file.");
+            return;
+        }
+
+        string batchFileName = $"{device.DeviceId}_example.bat";
+        string batchFilePath = Path.Combine(Environment.CurrentDirectory, batchFileName);
+
         try
         {
-            File.AppendAllText(BatchFilePath, newContent);
-            Console.WriteLine($"Batch file '{BatchFilePath}' updated successfully.");
+            File.AppendAllText(batchFilePath, newContent);
+            Console.WriteLine($"Batch file '{batchFilePath}' updated successfully.");
         }
         catch (Exception ex)
         {
@@ -32,13 +48,22 @@ public class AutoBatch
         }
     }
 
-    public static void RunBatch()
+    public static void RunBatchAsAdmin(IotDevice device)
     {
+        if (device == null || string.IsNullOrEmpty(device.DeviceId))
+        {
+            Console.WriteLine("Invalid device information. Unable to run batch file.");
+            return;
+        }
+
+        string batchFileName = $"{device.DeviceId}_example.bat";
+        string batchFilePath = Path.Combine(Environment.CurrentDirectory, batchFileName);
+
         try
         {
             var startInfo = new System.Diagnostics.ProcessStartInfo
             {
-                FileName = BatchFilePath,
+                FileName = batchFilePath,
                 Verb = "runas", 
                 UseShellExecute = true
             };
