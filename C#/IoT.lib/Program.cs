@@ -10,12 +10,15 @@ if (IoTCheck.PingTest(device.Ip))
 
     AutoBatch.CreateBatch(device);
 
-    AutoBatch.WriteBatch(
-        device,
-        "@echo off\r\n" +
-        "echo This is the updated batch file content.\r\n" +
-        "This Device Ip is $"{device.Ip}"\r\n"+
-        "pause");
+    string batchContent = $@"
+@echo off
+set DeviceIp={device.Ip}
+echo This is the updated batch file content.
+echo This Device Ip is %DeviceIp%
+pause
+";
+
+    AutoBatch.WriteBatch(device, batchContent);
 
     AutoBatch.RunBatchAsAdmin(device);
 }
