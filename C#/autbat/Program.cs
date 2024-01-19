@@ -14,7 +14,9 @@ else{
     bat.BatchType = FileType.bat;
 }
 
-Console.WriteLine(bat.FileName.ToString()+"."+bat.BatchType.ToString());
+BatchGenerator generator = new BatchGenerator();
+
+generator.CreateBatch(bat);
 
 static string GetFileName(){
     Console.Write("What's File Name : ");
