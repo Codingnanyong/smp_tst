@@ -1,5 +1,4 @@
-namespace autbat
-{
+namespace autobat.model{
     public enum FileType
     {
         sh,
